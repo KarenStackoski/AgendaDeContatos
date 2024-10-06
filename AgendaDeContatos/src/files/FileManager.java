@@ -38,4 +38,18 @@ public class FileManager {
             System.out.println("Erro ao exportar contatos: " + e.getMessage());
         }
     }
+    
+    public void clearContacts(HashMap<String, ContatosModel> contacts) {
+    	try (BufferedWriter bw = new BufferedWriter(new FileWriter(FILE_PATH))) {
+    		if (contacts == null) {
+    			System.out.println("Agenda já está limpa!");
+    		} else {
+    			bw.write("");
+    			System.out.println("Agenda limpa com sucesso!");
+    		}
+    		System.out.println("Agenda limpa com sucesso!");
+    	} catch (IOException e) {
+             System.out.println("Erro ao limpar agenda: " + e.getMessage());
+         }
+    }
 }
