@@ -53,15 +53,29 @@ public class ContactsManager {
     }
 
     public void removeContactByName(String name) {
-
+    	if (contacts.remove(name) != null) {
+    		System.out.println("Contato removido com sucesso.");
+    	} else {
+    		System.out.println("Contato não encontrado.");
+    	}
     }
 
-    public void findContactByName(String name) {
-
+    public void findContactByName(String name) {    
+    	ContatosModel contato = contacts.get(name);
+    	if (contato != null) {
+    		System.out.println("Contato não encontrado.");
+    	} else {
+    		System.out.println(contato);
+    	}
     }
 
     public void findContactByPhone(String phone) {
-
+    	ContatosModel contato = contacts.get(phone);
+    	if (contato != null) {
+    		System.out.println("Contato não encontrado.");
+    	} else {
+    		System.out.println(contato);
+    	}
     }
 
     public void listContacts() {
@@ -75,10 +89,10 @@ public class ContactsManager {
     }
 
     public void makeCall(String phone) {
-
+    	//Tirar dúvidas com professor
     }
 
     public void clearAgenda() {
-
+    	fileManager.clearContacts(contacts);
     }
 }
