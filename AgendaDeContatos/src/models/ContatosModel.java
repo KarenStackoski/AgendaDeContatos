@@ -1,9 +1,9 @@
 package models;
 
 public class ContatosModel {
-	public String nome;
-	public String telefone;
-	public String endereco;
+    private String nome;
+    private String telefone; 
+    private String endereco; 
 	
 	public ContatosModel() {
 		
@@ -38,6 +38,10 @@ public class ContatosModel {
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
-	
+
+	@Override
+    public String toString() {
+        return "Nome: " + nome + ", Telefone: " + telefone + ", Endereço: " + endereco;
+    }
 	
 }
